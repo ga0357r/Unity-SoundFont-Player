@@ -213,6 +213,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1703652041508804065, guid: 682bb72de4414884b9a4b9bd9ba8b7d6, type: 3}
+      propertyPath: m_Pitch
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703652041508804065, guid: 682bb72de4414884b9a4b9bd9ba8b7d6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 619051621}
     - target: {fileID: 3736328430119493751, guid: 682bb72de4414884b9a4b9bd9ba8b7d6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -267,6 +275,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 682bb72de4414884b9a4b9bd9ba8b7d6, type: 3}
+--- !u!83 &619051621
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 36
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &1000379288
 GameObject:
   m_ObjectHideFlags: 0
