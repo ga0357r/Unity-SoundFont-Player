@@ -4,6 +4,7 @@ using System.IO;
 using NAudio.Wave;
 using NAudio.Midi;
 using System.Threading;
+using System;
 
 public class SoundFontPlayer : MonoBehaviour
 {
@@ -96,13 +97,23 @@ public class SoundFontPlayer : MonoBehaviour
                     audioClip = AudioClip.Create(sample.SampleName, (int)(sample.End - sample.Start), (int)sample.SFSampleLink, sampleRate, false);
 
                     // Copy the sample data to the AudioClip
-                    byte sampleData = soundfont.SampleData[sampleIndex];
+                    int startIndex = (int)sample.Start;
+                    int endIndex = (int)sample.End;
+                    byte[] sampleData = new byte[endIndex - startIndex];
+                    Array.Copy(soundfont.SampleData, startIndex, sampleData, 0, endIndex - startIndex);
 
-                    // Convert byte to float and Normalize byte value to float range (0 to 1)
-                    float floatData = sampleData / 255f; 
+                    //convert to a float array
+                    float normalizedData = 0;
+                    float[] convertedSampleData = new float[sampleData.Length];
 
-                    audioClip.SetData(new float[] { floatData }, 0);
-
+                    for (int i = 0; i < sampleData.Length; i++)
+                    {
+                        normalizedData = sampleData[i]/255f;
+                        convertedSampleData[i] = normalizedData;
+                    }
+                    
+                    audioClip.SetData(convertedSampleData, 0);
+                    
                     // Create a new AudioSource and play the AudioClip
                     audioSource.clip = audioClip;
                     audioSource.pitch = 3;
